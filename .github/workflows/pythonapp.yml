@@ -50,3 +50,13 @@ jobs:
         with:
           name: exported_data
           path: ${{ steps.set_output.outputs.exported_data_file }}
+      
+      - name: Push JSON file to repository
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add exported_data.json
+          git commit -m "Add exported_data.json"
+          git push origin main
