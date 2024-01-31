@@ -42,7 +42,7 @@ jobs:
       - name: Run script and set environment variable
         run: |
           output_json_file="exported_data.json"
-          python your_script.py
+          python .github/workflows/example.py
           echo "export EXPORTED_DATA_FILE=$output_json_file" >> $GITHUB_ENV
   
       - name: Upload JSON file as artifact
