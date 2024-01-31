@@ -68,6 +68,9 @@ def main():
     output_json_file = 'exported_data.json'
     export_as_json(export_data, output_json_file)
     print(f"Exported data to {output_json_file}")
+    
+    # Output the file path for GitHub Actions to pick up
+    print(f"::set-output name=exported_data_file::{output_json_file}")
 
 if __name__ == '__main__':
     main()
