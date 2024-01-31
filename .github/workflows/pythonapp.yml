@@ -34,15 +34,11 @@ jobs:
           export PYTHONPATH=src
           pytest
           echo "Test done"
-      - name: Run a Python script
-        env:
-          AZURE_SECRET_TOKEN: ${{ secrets.AZURE_SECRET_TOKEN }}
-        run: python .github/workflows/example.py
  
       - name: Run script and set environment variable
         run: |
           output_json_file="exported_data.json"
-          python .github/workflows/example.py
+          python your_script.py
           echo "export EXPORTED_DATA_FILE=$output_json_file" >> $GITHUB_ENV
   
       - name: Upload JSON file as artifact
