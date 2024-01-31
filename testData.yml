@@ -1,0 +1,17 @@
+server:
+  host: google.com
+  port: 9090
+database:
+  name: mysql
+  credentials:
+    username: bhoopesh
+    password: xxxxx
+  tables:
+    - name: table1
+      columns:
+        - id
+        - name
+    - name: table2
+      columns:
+        - id
+        - title

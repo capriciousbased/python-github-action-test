@@ -11,13 +11,16 @@ jobs:
     - uses: actions/checkout@v2
     - run: |
         git fetch --prune --unshallow
+
     - name: Set up Python 3.8
       uses: actions/setup-python@v1
       with:
         python-version: 3.8
+        
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
+        pip install pyyaml
         pip install -r requirements.txt
     - name: Lint with flake8
       run: |
