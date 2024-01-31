@@ -39,13 +39,14 @@ jobs:
           AZURE_SECRET_TOKEN: ${{ secrets.AZURE_SECRET_TOKEN }}
         run: python .github/workflows/example.py
  
-      - name: Set exported_data_file environment variable
+      - name: Run script and set environment variable
         run: |
-          source ./exported_data_env.txt
-        shell: bash
+          output_json_file="exported_data.json"
+          python your_script.py
+          echo "export EXPORTED_DATA_FILE=$output_json_file" >> $GITHUB_ENV
   
       - name: Upload JSON file as artifact
         uses: actions/upload-artifact@v2
         with:
           name: exported_data
-          path: ${{ exported_data_file }}
+          path: ${{ env.EXPORTED_DATA_FILE }}
