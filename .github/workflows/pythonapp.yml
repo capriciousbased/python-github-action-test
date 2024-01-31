@@ -38,10 +38,8 @@ jobs:
         env:
           AZURE_SECRET_TOKEN: ${{ secrets.AZURE_SECRET_TOKEN }}
         run: python .github/workflows/example.py
-      
+
       - name: Upload JSON file as artifact
         uses: actions/upload-artifact@v2
         with:
           name: exported_data
-          path: ${{ steps.script.outputs.exported_data_file }}
-  
