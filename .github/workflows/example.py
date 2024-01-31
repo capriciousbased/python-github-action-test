@@ -69,8 +69,9 @@ def main():
     export_as_json(export_data, output_json_file)
     print(f"Exported data to {output_json_file}")
     
-    # Output the file path for GitHub Actions to pick up
-    print(f"::set-output name=exported_data_file::{output_json_file}")
+    # Write the file path to an environment file
+    with open('exported_data_env.txt', 'w') as env_file:
+      env_file.write(f'exported_data_file={output_json_file}\n')
 
 if __name__ == '__main__':
     main()
