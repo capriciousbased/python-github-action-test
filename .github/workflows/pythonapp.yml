@@ -46,7 +46,6 @@ jobs:
           # Run your Python script and save the JSON file
           python .github/workflows/example.py
           echo "EXPORTED_DATA_FILE=$output_json_file" >> $GITHUB_ENV
-          cp $output_json_file $GITHUB_WORKSPACE
         shell: bash
 
       - name: Upload JSON file as artifact
