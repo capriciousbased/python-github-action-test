@@ -10,7 +10,7 @@ def main():
   
   
 # Specify the path to your complex YAML file
-yaml_file_path = '/Users/mdanisulhoquekhan/Desktop/python-github-action-test/testData.yml'
+yaml_file_path = 'testData.yml'
 
 # Open the YAML file and load its content
 with open(yaml_file_path, 'r') as yaml_file:
