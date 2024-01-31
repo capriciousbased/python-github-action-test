@@ -31,3 +31,4 @@ jobs:
         pip install pytest
         export PYTHONPATH=src
         pytest
+        echo "Test done"
