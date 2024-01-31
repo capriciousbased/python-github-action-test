@@ -2,12 +2,6 @@ import os
 import yaml
 import json
 
-def get_azure_token():
-    token = os.environ.get("AZURE_SECRET_TOKEN")
-    if not token:
-        raise RuntimeError("AZURE_SECRET_TOKEN env var is not set!")
-    return token
-
 def load_yaml_file(file_path):
     with open(file_path, 'r') as yaml_file:
         return yaml.safe_load(yaml_file)
@@ -38,8 +32,6 @@ def export_as_json(data, output_file):
 
 def main():
     print("Hello from GitHub Actions!")
-    azure_token = get_azure_token()
-    print("All good! We found our env var")
 
     # Specify the path to your complex YAML file
     yaml_file_path = 'testData.yml'
